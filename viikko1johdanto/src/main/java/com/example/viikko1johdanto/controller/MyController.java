@@ -8,12 +8,27 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class MyController {
+
+    @RequestMapping("/index")
+    @ResponseBody
+
+    public String index(){
+        return "This is the main page";
+    }
+
+    @RequestMapping("/contact")
+    @ResponseBody
+
+    public String contact(){
+        return "This is the contact page";
+    }
+
     @RequestMapping("/hello")
     @ResponseBody
     
     public String returnString(@RequestParam String name, @RequestParam String location) {
         return "Welcome to the " + location +" "+ name + "!";
-    }
+}
     
 
 }
